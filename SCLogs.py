@@ -43,20 +43,8 @@ def get_logs( session, no_of_logs, date=None ):
     else:
         year = date[2:]
         month = date[:2]
-    '''
-    # severity IDs:
-    # 2 - critical
-    # 1 - warning
-    
-    JSON filter definition for severity logs:
 
-    {"id":"severityLogs",
-     "filterName":"severity",
-     "operator":"=",
-     "type":"scLog",
-     "value":{"id" }
-     
-    '''
+
     response = session.post( "analysis", json={"query":
                                                 {"name":"",
                                                  "description":"",
@@ -117,7 +105,7 @@ def define_vars():
     parser.add_argument('-o', "--output", metavar='output_filename', type=str,
                         help='define the output file name (default: logs-[current date].csv')
 
-    parser.add_argument('-d', "--date", metavar='output_filename', type=str,
+    parser.add_argument('-d', "--date", metavar='date', type=str,
                         help='define date in format MM/YYYY, i.e. 06/2018')
 
     parser.add_argument('-H', "--host", metavar='hostname',
