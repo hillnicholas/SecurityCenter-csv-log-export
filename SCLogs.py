@@ -131,7 +131,7 @@ def define_vars():
 
     if args.date:
         if re.match( "[0-1][0-9]\/[0-9]{4,4}", args.date ):
-            date = args.date 
+            date = args.date.replace("/","")
         else:
             print "Error: bad value for date: {} \n Date should match format MM/YYYY".format( date )
     # default to current month
